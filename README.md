@@ -13,4 +13,5 @@ Examples:
 @reboot sudo python3 /root/jobs/bootup_scripts/motors_sleep_Flex.py
 */30 * * * * sudo python3 /root/jobs/bootup_scripts/motors_sleep_Flex.py
 */30 * * * * /bin/sh /root/jobs/internet_connection.sh
+* * * * * sudo su  && sudo python3 /root/jobs/watchdog.py
 ```
