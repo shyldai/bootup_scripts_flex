@@ -1,4 +1,4 @@
-# bootup_scripts
+# bootup flex scripts 
 
 Add the scripts to crontab:
 
