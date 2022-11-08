@@ -10,7 +10,7 @@ ZERO=0
 COUNTER=0 
 echo $Calculator
 echo $Max_thereshold
-while [ $COUNTER -le Max_thereshold ]
+while [ $COUNTER -le $Max_thereshold ]
 do
 COUNTER=$((COUNTER+1))
 echo $COUNTER
