@@ -120,4 +120,6 @@ else:
     uv=False
 
 UV_driver(x= opt.x, y=opt.y, uv=uv,p1=p1,p2=p2,q1=q1,q2=q2,l=l)
+
+GPIO.output(8, False)
 GPIO.output(11, False)
