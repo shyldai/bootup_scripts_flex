@@ -26,7 +26,11 @@ class HealthMonitor:
     memory_usage_threshold = 80 #percent
 
     # Token is created for the warning channel of Slack
-    slack_client = WebClient(token="token-api")
+    for i in range(5):
+        try:
+            slack_client = WebClient(token="token-api")
+        except:
+            time.sleep(5)
     # The slave address of the MCP3021
     mcp3021_address = 0x4b
     # Use i2c bus 1
@@ -54,10 +58,12 @@ class HealthMonitor:
                 channel="#warning",
                 text=text
             )
-        except SlackApiError as e:
-            # If there's an error, print it to the console
-            print(f"Error sending message: {e}")
-
+        except:
+            for i in range(5):
+                try:
+                    self.slack_client = WebClient(token="token-api")
+                except:
+                    time.sleep(5)
 
     def get_disk_usage(self):
         """Gets the disk usage statistics for the root directory ('/') and prints them to the console.
