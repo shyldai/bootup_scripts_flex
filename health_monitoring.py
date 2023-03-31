@@ -3,6 +3,15 @@ import time
 from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
 import psutil
+import RPi.GPIO as GPIO
+
+GPIO.setmode(GPIO.BCM)
+
+GPIO.setup(18,GPIO.OUT)
+GPIO.setup(7,GPIO.OUT)
+# Activate the fans
+GPIO.output(7, False)
+GPIO.output(18, False)
 
 class HealthMonitor:
     device_name = 'Flex-'
