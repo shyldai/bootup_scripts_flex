@@ -10,8 +10,8 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(18,GPIO.OUT)
 GPIO.setup(7,GPIO.OUT)
 # Activate the fans
-GPIO.output(7, False)
-GPIO.output(18, False)
+GPIO.output(7, True)
+GPIO.output(18, True)
 
 class HealthMonitor:
     device_name = 'Flex-'
